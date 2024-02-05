@@ -16,14 +16,29 @@
       window.apsspads = window.apsspads || { cmd: [] };
       apsspads.cmd.push(function () {
         apsspads.setConfig({
-          pubId: '262574596', // 애드팝콘 앱키
+          pubId: '874423248', // 애드팝콘 앱키
+          adid: '718F8867-A35E-4EF3-91E4-8995BF70C5A0',
         });
-        apsspads.defineAdUnits({
-          code: 'div-1', // 광고 노출 영역 (HTML Element)의 Id
-          plcmtId: 'nLLeQK6exV44QuR', // 애드팝콘 지면 Id
-          size: [320, 50], // 크기 (네이티브 광고일 경우 정의하지 않습니다, NAM 광고 크기 X)
-          // 또는 fallback: { nam: "WEB_nw_??????????" }
-        });
+        apsspads.defineAdUnits([
+          // {
+          //   code: 'div-1', // 광고 노출 영역 (HTML Element)의 Id
+          //   plcmtId: 'nLLeQK6exV44QuR', // 애드팝콘 지면 Id
+          //   size: [320, 50], // 크기 (네이티브 광고일 경우 정의하지 않습니다, NAM 광고 크기 X)
+          //   // 또는 fallback: { nam: "WEB_nw_??????????" }
+          // },
+          {
+            code: 'div-ios-1', // 광고 노출 영역 (HTML Element)의 Id
+            plcmtId: 'igKPsK8Orx2ROgH', // 애드팝콘 지면 Id
+            size: [300, 250], // 크기 (네이티브 광고일 경우 정의하지 않습니다, NAM 광고 크기 X)
+            // 또는 fallback: { nam: "WEB_nw_??????????" }
+          },
+          {
+            code: 'div-ios-2', // 광고 노출 영역 (HTML Element)의 Id
+            plcmtId: 'jcLBVljo7PTY4jV', // 애드팝콘 지면 Id
+            size: [300, 250], // 크기 (네이티브 광고일 경우 정의하지 않습니다, NAM 광고 크기 X)
+            // 또는 fallback: { nam: "WEB_nw_??????????" }
+          },
+        ]);
         apsspads.addEventListener('error', function (obj) {
           // 광고 미 노출 시 호출
           // providerName: 광고 미 노출 공급자명
@@ -45,6 +60,8 @@
   <body>
     <span>애드팝콘 테스트</span>
     <div id="div-1"></div>
+    <div id="div-ios-1"></div>
+    <div id="div-ios-2"></div>
     <span id="adid_android"></span>
     <span id="adid_ios"></span>
     <script>
