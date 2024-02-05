@@ -50,12 +50,12 @@
     <script>
       const dataAndroid = localStorage.getItem('apssp_adid');
       document.getElementById('adid_android').innerText = dataAndroid
-        ? dataAndroid
+        ? 'android : ' + dataAndroid
         : 'No data found';
 
       const dataIOS = localStorage.getItem('apssp_idfa');
       document.getElementById('adid_ios').innerText = dataIOS
-        ? dataIOS
+        ? ' | ios : ' + dataIOS
         : 'No data found';
     </script>
   </body>
