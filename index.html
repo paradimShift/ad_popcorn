@@ -7,13 +7,16 @@
         'apssp_adid',
         '906ca390-1eb0-474f-8145-54d4dd236d6a'
       );
+      localStorage.setItem(
+        'apssp_idfa',
+        '718F8867-A35E-4EF3-91E4-8995BF70C5A0'
+      );
     </script>
     <script>
       window.apsspads = window.apsspads || { cmd: [] };
       apsspads.cmd.push(function () {
         apsspads.setConfig({
           pubId: '262574596', // 애드팝콘 앱키
-          adid: '906ca390-1eb0-474f-8145-54d4dd236d6', // 안드로이드(gaid)/ iOS(idfa)
         });
         apsspads.defineAdUnits({
           code: 'div-1', // 광고 노출 영역 (HTML Element)의 Id
@@ -42,10 +45,18 @@
   <body>
     <span>애드팝콘 테스트</span>
     <div id="div-1"></div>
-    <span id="adid"></span>
+    <span id="adid_android"></span>
+    <span id="adid_ios"></span>
     <script>
-      const data = localStorage.getItem('apssp_adid');
-      document.getElementById('adid').innerText = data ? data : 'No data found';
+      const dataAndroid = localStorage.getItem('apssp_adid');
+      document.getElementById('adid_android').innerText = data
+        ? data
+        : 'No data found';
+
+      const dataIOS = localStorage.getItem('apssp_idfa');
+      document.getElementById('adid_ios').innerText = data
+        ? data
+        : 'No data found';
     </script>
   </body>
 </html>
