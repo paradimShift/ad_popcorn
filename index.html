@@ -15,6 +15,13 @@
           size: [300, 250], // 크기 (네이티브 광고일 경우 정의하지 않습니다, NAM 광고 크기 X)
           // 또는 fallback: { nam: "WEB_nw_??????????" }
         });
+        apsspads.addEventListener('error', function (obj) {
+          // 광고 미 노출 시 호출
+          // providerName: 광고 미 노출 공급자명
+          // code: 광고 노출 영역 (HTML Element)의 Id
+          // stat: 에러 코드 (0: error (invalid ad unit id, ...), 2: no ad, 3: timeout)
+          console.log('error : ', obj); // {providerName: "apssp|nam", code: "div-1", stat: 2}
+        });
         apsspads.requestBids(); // 광고 요청
       });
     </script>
