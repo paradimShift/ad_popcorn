@@ -49,13 +49,13 @@
     <span id="adid_ios"></span>
     <script>
       const dataAndroid = localStorage.getItem('apssp_adid');
-      document.getElementById('adid_android').innerText = data
-        ? data
+      document.getElementById('adid_android').innerText = dataAndroid
+        ? dataAndroid
         : 'No data found';
 
       const dataIOS = localStorage.getItem('apssp_idfa');
-      document.getElementById('adid_ios').innerText = data
-        ? data
+      document.getElementById('adid_ios').innerText = dataIOS
+        ? dataIOS
         : 'No data found';
     </script>
   </body>
