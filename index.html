@@ -14,12 +14,12 @@
     </script>
     <script>
       window.apsspads = window.apsspads || { cmd: [] };
-      window.apsspads.cmd.push(function () {
-        window.apsspads.setConfig({
+      apsspads.cmd.push(function () {
+        apsspads.setConfig({
           pubId: '397261446', // 애드팝콘 앱키
           adid: '718F8867-A35E-4EF3-91E4-8995BF70C5A0',
         });
-        window.apsspads.defineAdUnits([
+        apsspads.defineAdUnits([
           // {
           //   code: 'div-1', // 광고 노출 영역 (HTML Element)의 Id
           //   plcmtId: 'nLLeQK6exV44QuR', // 애드팝콘 지면 Id
@@ -39,7 +39,7 @@
             // 또는 fallback: { nam: "WEB_nw_??????????" }
           },
         ]);
-        window.apsspads.addEventListener('error', function (obj) {
+        apsspads.addEventListener('error', function (obj) {
           // 광고 미 노출 시 호출
           // providerName: 광고 미 노출 공급자명
           // code: 광고 노출 영역 (HTML Element)의 Id
@@ -47,7 +47,7 @@
           console.log('error : ', obj); // {providerName: "apssp|nam", code: "div-1", stat: 2}
           alert('error : ' + JSON.stringify(obj));
         });
-        window.apsspads.requestBids(); // 광고 요청
+        apsspads.requestBids(); // 광고 요청
       });
     </script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
