@@ -6,14 +6,19 @@
       window.apsspads = window.apsspads || { cmd: [] };
       apsspads.cmd.push(function () {
         apsspads.setConfig({
-          pubId: '663451319', // 애드팝콘 앱키
+          pubId: '262574596', // 애드팝콘 앱키
           adid: '906ca390-1eb0-474f-8145-54d4dd236d6a', // 안드로이드(gaid)/ iOS(idfa)
         });
-        apsspads.defineAdUnits({
-          code: 'div-1', // 광고 노출 영역 (HTML Element)의 Id
-          plcmtId: 'BANNER_300x250', // 애드팝콘 지면 Id
-          size: [300, 250], // 광고 크기 [가로, 세로
-        });
+        apsspads.defineAdUnits([
+          {
+            code: 'div-2', // 광고 노출 영역 (HTML Element)의 Id
+            plcmtId: 'E8IWBtKXN1y0Vai', // 애드팝콘 지면 Id
+          },
+          {
+            code: 'div-1', // 광고 노출 영역 (HTML Element)의 Id
+            plcmtId: 'ZAIYxL7XdPsaTb5', // 애드팝콘 지면 Id
+          },
+        ]);
         apsspads.requestBids(); // 광고 요청
       });
     </script>
@@ -26,6 +31,7 @@
   </head>
   <body>
     <span>애드팝콘 테스트</span>
+    <div id="div-2" style="width: 300px; height: 300px"></div>
     <div id="div-1"></div>
   </body>
 </html>
