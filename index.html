@@ -3,49 +3,15 @@
   <head>
     <script async src="https://ssp.igaw.io/sdk/apsspads.js"></script>
     <script>
-      localStorage.setItem(
-        'apssp_adid',
-        '906ca390-1eb0-474f-8145-54d4dd236d6a'
-      );
-      localStorage.setItem(
-        'apssp_idfa',
-        '718F8867-A35E-4EF3-91E4-8995BF70C5A0'
-      );
-    </script>
-    <script>
       window.apsspads = window.apsspads || { cmd: [] };
       apsspads.cmd.push(function () {
         apsspads.setConfig({
-          pubId: '397261446', // 애드팝콘 앱키
-          adid: '718F8867-A35E-4EF3-91E4-8995BF70C5A0',
+          pubId: '262574596', // 애드팝콘 앱키
+          adid: '906ca390-1eb0-474f-8145-54d4dd236d6a', // 안드로이드(gaid)/ iOS(idfa)
         });
-        apsspads.defineAdUnits([
-          // {
-          //   code: 'div-1', // 광고 노출 영역 (HTML Element)의 Id
-          //   plcmtId: 'nLLeQK6exV44QuR', // 애드팝콘 지면 Id
-          //   size: [320, 50], // 크기 (네이티브 광고일 경우 정의하지 않습니다, NAM 광고 크기 X)
-          //   // 또는 fallback: { nam: "WEB_nw_??????????" }
-          // },
-          {
-            code: 'div-ios-1', // 광고 노출 영역 (HTML Element)의 Id
-            plcmtId: 'iOS_BANNER_320x50', // 애드팝콘 지면 Id
-            size: [320, 50], // 크기 (네이티브 광고일 경우 정의하지 않습니다, NAM 광고 크기 X)
-            // 또는 fallback: { nam: "WEB_nw_??????????" }
-          },
-          {
-            code: 'div-ios-2', // 광고 노출 영역 (HTML Element)의 Id
-            plcmtId: 'iOS_BANNER_300x250', // 애드팝콘 지면 Id
-            size: [300, 250], // 크기 (네이티브 광고일 경우 정의하지 않습니다, NAM 광고 크기 X)
-            // 또는 fallback: { nam: "WEB_nw_??????????" }
-          },
-        ]);
-        apsspads.addEventListener('error', function (obj) {
-          // 광고 미 노출 시 호출
-          // providerName: 광고 미 노출 공급자명
-          // code: 광고 노출 영역 (HTML Element)의 Id
-          // stat: 에러 코드 (0: error (invalid ad unit id, ...), 2: no ad, 3: timeout)
-          console.log('error : ', obj); // {providerName: "apssp|nam", code: "div-1", stat: 2}
-          alert('error : ' + JSON.stringify(obj));
+        apsspads.defineAdUnits({
+          code: 'div-1', // 광고 노출 영역 (HTML Element)의 Id
+          plcmtId: 'ZAIYxL7XdPsaTb5', // 애드팝콘 지면 Id
         });
         apsspads.requestBids(); // 광고 요청
       });
@@ -60,20 +26,5 @@
   <body>
     <span>애드팝콘 테스트</span>
     <div id="div-1"></div>
-    <div id="div-ios-1"></div>
-    <div id="div-ios-2"></div>
-    <span id="adid_android"></span>
-    <span id="adid_ios"></span>
-    <script>
-      const dataAndroid = localStorage.getItem('apssp_adid');
-      document.getElementById('adid_android').innerText = dataAndroid
-        ? 'android : ' + dataAndroid
-        : 'No data found';
-
-      const dataIOS = localStorage.getItem('apssp_idfa');
-      document.getElementById('adid_ios').innerText = dataIOS
-        ? ' | ios : ' + dataIOS
-        : 'No data found';
-    </script>
   </body>
 </html>
